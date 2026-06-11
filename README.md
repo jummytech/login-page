@@ -48,3 +48,20 @@ CREATE TABLE IF NOT EXISTS users (
 ## Notes
 - Passwords are hashed with PHP's password_hash / password_verify.
 - Form validation sets errors into session and uses helpers in php/helper.php.
+
+# Screenshots for Login Page Project
+
+![](screenshots/login-page.png)
+  **The login page (username & password fields).**
+  
+![](screenshots/user-not-match.png)
+  **User not match error response.**
+  
+![](screenshots/input-error.png)
+  **Input error response.**
+  
+![](screenshots/register-page.png)
+  **The registration page (create a new account form).**
+
+![](screenshots/login-success.png)
+**The confirmation after a successful registration or login.**

@@ -51,6 +51,8 @@ if(count($errors)){
             }
         } else{
             $_SESSION['error'] = "No user with the username & password exist!";
+            unset($_POST['password']);
+            $_SESSION['inputs'] = $_POST;
             header("Location: ../");
         }
     
