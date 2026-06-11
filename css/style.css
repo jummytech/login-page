@@ -105,10 +105,10 @@ main > #auth-wrapper {
   flex-direction: column;
   gap: 1rem;
 }
-.form-input {
+.form-input>.password-input-wrapper {
   position: relative;
 }
-.form-input > input {
+.form-input  input {
   width: 100%;
   display: block;
   padding: 0.65rem 1rem;
@@ -121,18 +121,25 @@ main > #auth-wrapper {
   border-radius: 4px;
   caret-color: white;
 }
-.form-input > input:focus {
+.form-input  input:focus {
   border: 1px solid white;
 }
-.form-input > input::placeholder {
+.form-input  input::placeholder {
   color: rgba(255, 255, 255, 0.2);
   font-size: 0.85rem;
   font-weight: 500;
 }
 
-.forgot-password{
-    text-align: end;
-    font-size: 12px;
+.form-input .form-error{
+  color: red;
+  font-size: 12px;
+  margin-top: 0.25rem;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: space-between;
+  font-size: 12px;
 }
 
 .show-hide {
@@ -151,29 +158,64 @@ main > #auth-wrapper {
 .show-hide > #hide {
   display: none;
 }
-button{
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    background-color: var(--primary);
-    color: white;
-    padding:0.85rem 1rem;
-    border-radius: 0.5rem;
+button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.85rem 1rem;
+  border-radius: 0.5rem;
 }
 
-@media screen and (max-width:768px) {
-    aside{
-        display: none;
-    }
-    main {
-        width: 100%;
-    }
-    main>#auth-wrapper{
-        width: 80%;
-    }
-    main header>h1{
-        text-wrap: nowrap;
-        font-size: 1.5rem;
-    }
+button[type="reset"] {
+  border-radius: 0.25rem;
+  font-size: 12px;
+  padding: 0.35rem 0.5rem;
+  color: var(--primary);
+  background-color: white;
+}
+.alert{
+  position: relative;
+  background-color: rgba(250, 194, 194, 1);
+  color: rgb(194, 4, 4);
+  font-weight: 500;
+  padding: 0.65rem 1.125rem;
+  font-size: 12px;
+  border-radius: 0.275rem;
+}
+.alert[aria-hidden=true]{
+  display: none;
+}
+.alert[aria-hidden=false]{
+  display: block;
+}
+.alert>.alert-close-btn{
+  position: absolute;
+  right: 0;
+  top: 0;
+  line-height: 0;
+  font-size: 14px;
+  color: rgb(202, 16, 16);
+  padding-top: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+@media screen and (max-width: 768px) {
+  aside {
+    display: none;
+  }
+  main {
+    width: 100%;
+  }
+  main > #auth-wrapper {
+    width: 80%;
+  }
+  main header > h1 {
+    text-wrap: nowrap;
+    font-size: 1.5rem;
+  }
 }
